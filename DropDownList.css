@@ -1,0 +1,104 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: bisque;
+}
+
+.container {
+    position: absolute;
+    top: 200px;
+    height: 300px;
+    width: 200px;
+    cursor: pointer;
+    /* overflow: hidden; */
+}
+
+.button {
+    height: 50px;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    background: #000;
+    color: aliceblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 10px;
+}
+
+.op1 {
+    margin: 2px 0;
+    height: 40px;
+    width: 100%;
+    background: #ffffff;
+    color: #000;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+
+
+}
+
+.op2 {
+    margin: 2px 0;
+    height: 40px;
+    width: 100%;
+    background: #ffffff;
+    color: #000;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+
+
+}
+
+.op3 {
+    margin: 2px 0;
+    height: 40px;
+    width: 100%;
+    background: #ffffff;
+    color: #000;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+
+
+}
+
+.op4 {
+    margin: 2px 0;
+    height: 40px;
+    width: 100%;
+    background: #ffffff;
+    color: #000;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.ops {
+    display: flex;
+    flex-flow: column;
+    position: relative;
+    /* transition: 1s all ease-in-out; */
+}
+
+.active {
+
+    margin-left: -100%;
+}
+
+.ooo {
+    transition: .5s all ease-in-out;
+    margin-left: 100%;
+
+}
