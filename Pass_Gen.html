@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <title>passgenerator</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: linear-gradient(to left, #a9f1df, #ffbbbb);
+        color: aliceblue;
+      }
+      #text {
+        margin: 30px 20px;
+      }
+      #bt {
+        margin: 0 20px;
+      }
+      #text1 {
+        margin: 30px 20px;
+      }
+      #btt {
+        margin: 0 20px;
+      }
+      .cc {
+        padding: auto;
+        background: transparent;
+      }
+      .hh {
+        font-size: 2rem;
+        color: #430f00;
+      }
+      /* #bb:active {
+        background-color: #b8f1ff;
+      } */
+
+      #bb::before {
+        content: "copied";
+        position: absolute;
+        top: 237px;
+        left: 222px;
+        background-color: lightblue;
+        padding: 5px;
+        border-radius: 10px;
+        display: none;
+      }
+      #bb::after {
+        content: "";
+        height: 15px;
+        transform: rotate(270deg);
+        width: 10px;
+        background-color: lightblue;
+        position: absolute;
+        top: 247px;
+        left: 215px;
+        border-radius: 50px 50px 0 0;
+        display: none;
+      }
+
+      #bb:active::before,
+      #bb:active::after {
+        display: block;
+      }
+      #bb1::before {
+        content: "copied";
+        position: absolute;
+        top: 290px;
+        left: 222px;
+        background-color: lightblue;
+        padding: 5px;
+        border-radius: 10px;
+        display: none;
+      }
+      #bb1::after {
+        content: "";
+        height: 15px;
+        transform: rotate(270deg);
+        width: 10px;
+        background-color: lightblue;
+        position: absolute;
+        top: 300px;
+        left: 215px;
+        border-radius: 50px 50px 0 0;
+        display: none;
+      }
+
+      #bb1:active::before,
+      #bb1:active::after {
+        display: block;
+      }
+      #bb2 {
+        margin: 20px;
+      }
+      #bb2::before {
+        content: "copied";
+        position: absolute;
+        top: 303px;
+        left: 205px;
+        background-color: lightblue;
+        padding: 5px;
+        border-radius: 10px;
+        display: none;
+      }
+      #bb2::after {
+        content: "";
+        height: 15px;
+        transform: rotate(270deg);
+        width: 10px;
+        background-color: lightblue;
+        position: absolute;
+        top: 312px;
+        left: 192px;
+        border-radius: 50px 50px 0 0;
+        display: none;
+      }
+
+      #bb2:active::before,
+      #bb2:active::after {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <figure class="text-center">
+      <blockquote class="blockquote hh">
+        <p>This is a free to use Password Generator having 3 categories</p>
+      </blockquote>
+      <figcaption class="blockquote-footer">
+        by the one and only <cite title="Source Title">SIDDHESH</cite>
+      </figcaption>
+    </figure>
+    <div class="cc">
+      <div class="accordion accordion-flush cc" id="accordionFlushExample">
+        <div class="accordion-item cc">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseOne"
+              aria-expanded="false"
+              aria-controls="flush-collapseOne"
+            >
+              Weak Password
+            </button>
+          </h2>
+          <div
+            id="flush-collapseOne"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              <div id="text">Password will appear here.......</div>
+              <button type="button" class="btn btn-outline-primary" id="bt">
+                Generate</button
+              ><button type="button" class="btn btn-success" id="bb">
+                Copy
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item cc">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwo"
+              aria-expanded="false"
+              aria-controls="flush-collapseTwo"
+            >
+              Medium Password
+            </button>
+          </h2>
+          <div
+            id="flush-collapseTwo"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              <div id="text1">Password will appear here.......</div>
+              <button type="button" class="btn btn-outline-primary" id="btt">
+                Generate</button
+              ><button type="button" class="btn btn-success" id="bb1">
+                Copy
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item cc">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseThree"
+              aria-expanded="false"
+              aria-controls="flush-collapseThree"
+            >
+              Funny Password
+            </button>
+          </h2>
+          <div
+            id="flush-collapseThree"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              <div id="text2">Password will appear here.......</div>
+              <button type="button" class="btn btn-outline-primary" id="bttt">
+                Generate</button
+              ><button type="button" class="btn btn-success" id="bb2">
+                Copy
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // let m = Math.floor(Math.random() * (90 - 67 + 1)) + 67; //Get only upper case number
+      // let n = Math.floor(Math.random() * (122 - 97 + 1)) + 97; //Get only lower case number
+      // let no = Math.floor(Math.random() * 9); //Get only lower case number
+      // let code = String.fromCharCode(m);
+      // let code1 = String.fromCharCode(n);
+      // console.log(code, m);
+      // console.log(code1, n);
+      // console.log(no);
+      // /////////////////////////////////////easy password
+      // let num = 6;
+      // let arr = [];
+      // for (let i = 1; i < num; i++) {
+      //   if (i % 2 == 0) {
+      //     arr.push(code);
+      //     arr.push(no);
+      //   } else {
+      //     arr.push(code1);
+      //     arr.push(no);
+      //   }
+      // }
+      // console.log(arr);
+      let bt = document.getElementById("bt");
+      let bb = document.getElementById("bb");
+      let tt = document.getElementById("text");
+
+      let num = 6;
+      bt.addEventListener("click", (e) => {
+        let arr = [];
+        let brr = [];
+
+        for (let i = 1; i <= 3; i++) {
+          let m = Math.floor(Math.random() * (90 - 67 + 1)) + 67;
+          let code = String.fromCharCode(m);
+          arr.push(code);
+        }
+
+        for (let i = 1; i <= 3; i++) {
+          let n = Math.floor(Math.random() * (122 - 97 + 1)) + 97;
+          let code = String.fromCharCode(n);
+          brr.push(code);
+        }
+        let z = /,/g;
+
+        let password = arr.concat(brr);
+        password = password.join("");
+
+        tt.textContent = password;
+      });
+      bb.addEventListener("click", () => {
+        navigator.clipboard.writeText(tt.textContent);
+      });
+
+      let btt = document.getElementById("btt");
+      let text1 = document.getElementById("text1");
+      let bb1 = document.getElementById("bb1");
+      btt.addEventListener("click", (e) => {
+        let arr = [];
+
+        for (let i = 0; i < 6; i++) {
+          let m, n;
+          let con = true;
+
+          while (con) {
+            m = Math.floor(Math.random() * (122 - 50 + 1)) + 50;
+            n = String.fromCharCode(m);
+
+            if (n !== " ") {
+              arr.push(n);
+              con = false;
+            }
+          }
+        }
+
+        let password = arr.join("");
+        text1.textContent = password;
+      });
+      bb1.addEventListener("click", () => {
+        navigator.clipboard.writeText(text1.textContent);
+      });
+
+      let bttt = document.getElementById("bttt");
+      let text2 = document.getElementById("text2");
+      let bb2 = document.getElementById("bb2");
+      bttt.addEventListener("click", (e) => {
+        let fp = [
+          "Monkey",
+          "Pengui",
+          "Walrus",
+          "Squirr",
+          "Hippo ",
+          "Jellyf",
+          "Llama ",
+          "Chipmu",
+          "ZestyZ",
+          "Quokka",
+          "Ferret",
+          "Pengui",
+          "BunnyH",
+          "Caterp",
+          "SnailS",
+          "Dolphi",
+          "Giraff",
+          "PandaP",
+          "Kangar",
+          "SlothS",
+          "Cheeto",
+          "Starfi",
+          "Wiggly",
+          "Duckli",
+          "Hamste",
+          "Chimpa",
+          "Ferret",
+          "Whimsi",
+          "SassyS",
+          "Chameo",
+          "ZanyZe",
+          "LionLe",
+          "Salmon",
+          "SealSl",
+          "BisonB",
+          "Wander",
+          "Gorill",
+          "Parrot",
+          "SnakeS",
+          "Wombat",
+          "Daring",
+          "Jaguar",
+          "Squirr",
+          "ZippyZ",
+          "Pengui",
+          "QuailQ",
+          "LemurL",
+          "BatBou",
+          "Meerkat",
+        ];
+
+        let password = fp[Math.floor(Math.random() * 50)];
+        text2.textContent = password;
+      });
+      bb2.addEventListener("click", () => {
+        navigator.clipboard.writeText(text2.textContent);
+      });
+    </script>
+  </body>
+</html>
