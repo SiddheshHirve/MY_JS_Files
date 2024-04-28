@@ -69,13 +69,6 @@ drawbt.addEventListener("click",()=>{
     })
 })
 
-
-function drawfun(){
-    drawtext.textContent = "Match Draw"
-    draw.classList.toggle("hide")
-}
-
-
 function winner(a){
     boxs.disabled = true
     winname.textContent = `The winner is ${a}`
@@ -95,4 +88,11 @@ function findwin (){
         
     })
 }
+
+function drawfun(){
+    drawtext.textContent = "Match Draw"
+    draw.classList.toggle("hide")
+}
+
+
 
