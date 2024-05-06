@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Currency Converter</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      html {
+        height: 100%;
+        width: 100%;
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        background: #230c0f;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow-x: hidden;
+        overflow-y: hidden;
+      }
+
+      #main {
+        margin: 100px 0;
+        background: #cba328;
+        box-shadow: 0 0 15px 15px #fff;
+      }
+
+      #boxes {
+        width: 100vw;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      h1 {
+        color: #cb4510;
+        position: relative;
+        left: 625px;
+        margin: 30px 0;
+      }
+
+      .btnnn {
+        width: 200px;
+        position: relative;
+        left: 666px;
+        margin: 30px 0;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+      }
+      .btnnn:hover {
+        background-color: #cb4510;
+        color: #fff;
+        width: 200px;
+        position: relative;
+        left: 666px;
+        margin: 30px 0;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+      }
+      #res {
+        color: #ffffff;
+        font-size: 1.5rem;
+        position: relative;
+        left: 630px;
+        margin: 30px 0;
+      }
+      h2 {
+        padding: 15px;
+      }
+      input {
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        height: 30px;
+      }
+
+      #in {
+        color: #cb4510;
+      }
+      #out {
+        color: #cb4510;
+      }
+      #img1 {
+        height: 30px;
+      }
+      #img2 {
+        height: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="main">
+      <h1>Currency Converter</h1>
+      <div id="boxes">
+        <div id="in">
+          <h2>Input</h2>
+          <div id="intext">
+            <img id="img1" src="" alt="p1" />
+            <input
+              type="text"
+              id="in_val"
+              placeholder="Enter the name"
+              list="options"
+            />
+            <datalist id="options"> </datalist>
+          </div>
+        </div>
+        <div>
+          <h2><i class="fa-solid fa-right-left" style="color: #000000"></i></h2>
+        </div>
+        <div id="out">
+          <h2>Output</h2>
+          <div id="outtext">
+            <img id="img2" src="" alt="p2" />
+            <input
+              type="text"
+              id="out_val"
+              placeholder="Enter the name"
+              list="options"
+            />
+            <datalist id="options"> </datalist>
+          </div>
+        </div>
+      </div>
+      <button id="btn" class="btnnn">change</button>
+      <h2 id="res">result will appears here</h2>
+      <button id="btn2" class="btnnn">reset</button>
+    </div>
+
+    <script>
+      let list = [
+        "AED",
+        "AFN",
+        "ALL",
+        "AMD",
+        "ANG",
+        "AOA",
+        "ARS",
+        "AUD",
+        "AWG",
+        "AZN",
+        "BAM",
+        "BBD",
+        "BDT",
+        "BGN",
+        "BHD",
+        "BIF",
+        "BMD",
+        "BND",
+        "BOB",
+        "BRL",
+        "BSD",
+        "BTN",
+        "BWP",
+        "BYN",
+        "BZD",
+        "CAD",
+        "CDF",
+        "CHF",
+        "CLP",
+        "CNY",
+        "COP",
+        "CRC",
+        "CUP",
+        "CVE",
+        "CZK",
+        "DJF",
+        "DKK",
+        "DOP",
+        "DZD",
+        "EGP",
+        "ERN",
+        "ETB",
+        "EUR",
+        "FJD",
+        "FKP",
+        "FOK",
+        "GBP",
+        "GEL",
+        "GGP",
+        "GHS",
+        "GIP",
+        "GMD",
+        "GNF",
+        "GTQ",
+        "GYD",
+        "HKD",
+        "HNL",
+        "HRK",
+        "HTG",
+        "HUF",
+        "IDR",
+        "ILS",
+        "IMP",
+        "INR",
+        "IQD",
+        "IRR",
+        "ISK",
+        "JEP",
+        "JMD",
+        "JOD",
+        "JPY",
+        "KES",
+        "KGS",
+        "KHR",
+        "KID",
+        "KMF",
+        "KRW",
+        "KWD",
+        "KYD",
+        "KZT",
+        "LAK",
+        "LBP",
+        "LKR",
+        "LRD",
+        "LSL",
+        "LYD",
+        "MAD",
+        "MDL",
+        "MGA",
+        "MKD",
+        "MMK",
+        "MNT",
+        "MOP",
+        "MRU",
+        "MUR",
+        "MVR",
+        "MWK",
+        "MXN",
+        "MYR",
+        "MZN",
+        "NAD",
+        "NGN",
+        "NIO",
+        "NOK",
+        "NPR",
+        "NZD",
+        "OMR",
+        "PAB",
+        "PEN",
+        "PGK",
+        "PHP",
+        "PKR",
+        "PLN",
+        "PYG",
+        "QAR",
+        "RON",
+        "RSD",
+        "RUB",
+        "RWF",
+        "SAR",
+        "SBD",
+        "SCR",
+        "SDG",
+        "SEK",
+        "SGD",
+        "SHP",
+        "SLE",
+        "SLL",
+        "SOS",
+        "SRD",
+        "SSP",
+        "STN",
+        "SYP",
+        "SZL",
+        "THB",
+        "TJS",
+        "TMT",
+        "TND",
+        "TOP",
+        "TRY",
+        "TTD",
+        "TVD",
+        "TWD",
+        "TZS",
+        "UAH",
+        "UGX",
+        "USD",
+        "UYU",
+        "UZS",
+        "VES",
+        "VND",
+        "VUV",
+        "WST",
+        "XAF",
+        "XCD",
+        "XDR",
+        "XOF",
+        "XPF",
+        "YER",
+        "ZAR",
+        "ZMW",
+        "ZWL",
+      ];
+
+      let res = document.getElementById("res");
+      let btn2 = document.getElementById("btn2");
+
+      ////////////////////////////////////////////////////////////////////counrty name api
+      // (() => {
+      //   let n = fetch(" https://open.er-api.com/v6/latest/USD")
+      //   n.then((value) => {
+      //     return value.json()
+      //   }).then((value) => {
+      //     console.log(value.rates)
+      //   })
+      // }
+      // )()
+
+      list.forEach((list) => {
+        let option = document.createElement("option");
+        option.value = list;
+        option.innerHTML = list;
+        document.getElementById("options").appendChild(option);
+      });
+
+      btn.addEventListener("click", () => {
+        let inval = document.getElementById("in_val").value;
+        let outval = document.getElementById("out_val").value;
+        let url = `https://open.er-api.com/v6/latest/${inval}`;
+        let n = fetch(url);
+        n.then((value) => {
+          return value.json();
+        }).then((value) => {
+          console.log(outval);
+          img1.src = `https://flagcdn.com/w320/${inval
+            .substring(0, 2) //takes first 2 charater from ur string
+            .toLowerCase()}.png`;
+          img2.src = `https://flagcdn.com/w320/${outval
+            .substring(0, 2)
+            .toLowerCase()}.png`;
+          res.innerHTML = `1 ${inval} = ${value.rates[outval]} ${outval}`;
+        });
+      });
+
+      btn2.addEventListener("click", () => {
+        let inval = document.getElementById("in_val");
+        inval.value = "";
+
+        let outval = document.getElementById("out_val");
+        outval.value = "";
+
+        res.innerHTML = "result will appears here";
+
+        img1.src = "";
+        img2.src = "";
+      });
+    </script>
+  </body>
+</html>
